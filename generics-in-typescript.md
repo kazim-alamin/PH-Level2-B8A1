@@ -1,5 +1,7 @@
 # Generics in TypeScript and asynchronous Promise<T> Explained Simply
 
+## Introduction
+
 Generics look confusing at first in Typescript. That little `<T>` shows up everywhere, and it's too much confusing sometime when things get complicated. But once you understand the basics, async code gets a lot easier to work with.
 
 ## What is a generic?
@@ -15,7 +17,7 @@ getFirst([1, 2, 3]); // number
 getFirst(["a", "b"]); // string
 ```
 
-Here we are passing an array of numbers as parameter in the first call and an array of string in the second call. But in the function 'getFirst' we have used a generic type `<T>` which is useful and easy to reuse the code.
+Here we are passing an array of numbers as parameter in the first call and an array of string in the second call. But in the function 'getFirst' we have used a generic type `<T>` which will replace the type dynamically from the type of the parameters during the function call. It's useful and easy to reuse the code for different usage with different types.
 
 ## How it helps with Promises
 
