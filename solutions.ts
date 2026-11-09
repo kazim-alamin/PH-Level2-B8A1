@@ -1,11 +1,9 @@
-const multiplyValue = (value: number, multiplier?: number) => {
+const multiplyValue = (value: number, multiplier?: number): number => {
   if (multiplier === undefined) {
     return value * 2;
   }
 
-  const result = value * multiplier;
-
-  return result === 0 ? 0 : result;
+  return value * multiplier;
 };
 
 type InputValue = string | number | boolean;
@@ -92,7 +90,6 @@ class Manager extends Employee {
   }
 }
 
-
 const validateAgeAsync = (age: number): Promise<string> => {
   return new Promise<string>((resolve, reject) => {
     if (age < 18) {
@@ -103,4 +100,3 @@ const validateAgeAsync = (age: number): Promise<string> => {
     setTimeout(() => resolve("Access Granted"), 1000);
   });
 };
-
