@@ -3,7 +3,21 @@ const multiplyValue = (value: number, multiplier?: number) => {
     return value * 2;
   }
 
-  return value * multiplier;
+  const result = value * multiplier;
+
+  return result === 0 ? 0 : result;
 };
 
-console.log(multiplyValue(7, 0));
+
+type InputValue = string | number | boolean;
+const processInput = (value: InputValue): string | number => {
+  if (typeof value === "string") {
+    return value.trim().toLocaleLowerCase();
+  }
+
+  if (typeof value === "number") {
+    return value * 10;
+  }
+
+  return value ? "Active" : "Inactive";
+};
