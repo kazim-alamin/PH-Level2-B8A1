@@ -21,3 +21,15 @@ const processInput = (value: InputValue): string | number => {
 
   return value ? "Active" : "Inactive";
 };
+
+
+type Coordinate = readonly [
+  latitude: number,
+  longitude: number,
+  locationName: string,
+];
+
+const formatCoordinate = (coordinate: Coordinate): string => {
+  const [latitude, longitude, locationName] = coordinate;
+  return `Location: ${locationName} (${latitude}, ${longitude})`;
+};
