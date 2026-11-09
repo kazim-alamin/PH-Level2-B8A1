@@ -8,7 +8,6 @@ const multiplyValue = (value: number, multiplier?: number) => {
   return result === 0 ? 0 : result;
 };
 
-
 type InputValue = string | number | boolean;
 const processInput = (value: InputValue): string | number => {
   if (typeof value === "string") {
@@ -22,7 +21,6 @@ const processInput = (value: InputValue): string | number => {
   return value ? "Active" : "Inactive";
 };
 
-
 type Coordinate = readonly [
   latitude: number,
   longitude: number,
@@ -32,4 +30,16 @@ type Coordinate = readonly [
 const formatCoordinate = (coordinate: Coordinate): string => {
   const [latitude, longitude, locationName] = coordinate;
   return `Location: ${locationName} (${latitude}, ${longitude})`;
+};
+
+const concatenateArrays = <T>(...arrays: T[][]): T[] => {
+  const resultArray: T[] = [];
+
+  for (const array of arrays) {
+    for (const item of array) {
+      resultArray.push(item);
+    }
+  }
+
+  return resultArray;
 };
