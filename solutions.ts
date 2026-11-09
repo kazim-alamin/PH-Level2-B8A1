@@ -65,7 +65,6 @@ const pluckValues = <T, K extends keyof T>(items: T[], key: K): T[K][] => {
   return items.map((item) => item[key]);
 };
 
-// Problem 7
 class Employee {
   protected name: string;
   private baseSalary: number;
@@ -92,3 +91,16 @@ class Manager extends Employee {
     return `Manager of ${this.department}: ${this.name}`;
   }
 }
+
+
+const validateAgeAsync = (age: number): Promise<string> => {
+  return new Promise<string>((resolve, reject) => {
+    if (age < 18) {
+      reject(new Error("Access Denied: Must be 18 or older"));
+      return;
+    }
+
+    setTimeout(() => resolve("Access Granted"), 1000);
+  });
+};
+
